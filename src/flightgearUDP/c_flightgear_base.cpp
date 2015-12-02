@@ -63,6 +63,8 @@ void c_flightgear_base::set_position_wgs84(double lat_rad, double lon_rad, doubl
     FGData.altitude    = alt_m;
     FGData.agl         = agl;
 
+    FGData.cur_time    = 1427883070; // Initial Unix Time
+
     htond(FGData.longitude);
     htond(FGData.latitude);
     htond(FGData.altitude);

@@ -3,17 +3,17 @@
  *
  * Code generated for Simulink model 'tricopter_simulation_rtw'.
  *
- * Model version                  : 1.246
+ * Model version                  : 1.242
  * Simulink Coder version         : 8.1 (R2011b) 08-Jul-2011
- * TLC version                    : 8.1 (Aug  6 2011)
- * C/C++ source code generated on : Sun Apr 20 14:49:51 2014
+ * TLC version                    : 8.1 (Jul  9 2011)
+ * C/C++ source code generated on : Mon Mar 23 12:14:52 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: 32-bit Generic
  * Emulation hardware selection:
  *    Differs from embedded hardware (MATLAB Host)
  * Code generation objectives: Unspecified
- * Validation result: Not run
+ * Validation result: Passed (0), Warning (1), Error (0)
  */
 
 #include "tricopter_simulation_rtw.h"
@@ -26,43 +26,43 @@ const ConstBlockIO_tricopter_simulati tricopter_simulation_rtw_ConstB = {
     0.0,
     0.0
   }
-  ,                                    /* '<S22>/1//2' */
+  ,                                    /* '<S23>/1//2' */
   1.0
-  ,                                    /* '<S22>/cos(phi//2)' */
+  ,                                    /* '<S23>/cos(phi//2)' */
   1.0
-  ,                                    /* '<S22>/cos(theta//2)' */
+  ,                                    /* '<S23>/cos(theta//2)' */
   1.0
-  ,                                    /* '<S22>/cos(psi//2)' */
+  ,                                    /* '<S23>/cos(psi//2)' */
   1.0
-  ,                                    /* '<S22>/CCC' */
+  ,                                    /* '<S23>/CCC' */
   0.0
-  ,                                    /* '<S22>/sin(phi//2)' */
+  ,                                    /* '<S23>/sin(phi//2)' */
   0.0
-  ,                                    /* '<S22>/sin(theta//2)' */
+  ,                                    /* '<S23>/sin(theta//2)' */
   0.0
-  ,                                    /* '<S22>/sin(psi//2)' */
+  ,                                    /* '<S23>/sin(psi//2)' */
   0.0
-  ,                                    /* '<S22>/SSS' */
+  ,                                    /* '<S23>/SSS' */
   1.0
-  ,                                    /* '<S22>/Sum9' */
+  ,                                    /* '<S23>/Sum9' */
   0.0
-  ,                                    /* '<S22>/SCC' */
+  ,                                    /* '<S23>/SCC' */
   0.0
-  ,                                    /* '<S22>/CSS' */
+  ,                                    /* '<S23>/CSS' */
   0.0
-  ,                                    /* '<S22>/Sum2' */
+  ,                                    /* '<S23>/Sum2' */
   0.0
-  ,                                    /* '<S22>/CSC' */
+  ,                                    /* '<S23>/CSC' */
   0.0
-  ,                                    /* '<S22>/SCS' */
+  ,                                    /* '<S23>/SCS' */
   0.0
-  ,                                    /* '<S22>/Sum1' */
+  ,                                    /* '<S23>/Sum1' */
   0.0
-  ,                                    /* '<S22>/CCS' */
+  ,                                    /* '<S23>/CCS' */
   0.0
-  ,                                    /* '<S22>/SSC' */
+  ,                                    /* '<S23>/SSC' */
   0.0
-  ,                                    /* '<S22>/Sum3' */
+  ,                                    /* '<S23>/Sum3' */
 
   {
     0.0625,
@@ -84,7 +84,7 @@ const ConstBlockIO_tricopter_simulati tricopter_simulation_rtw_ConstB = {
     0.0,
     0.0
   }
-  ,                                    /* '<S14>/Matrix Concatenation' */
+  ,                                    /* '<S15>/Matrix Concatenation' */
 
   {
     0.0625,
@@ -97,13 +97,17 @@ const ConstBlockIO_tricopter_simulati tricopter_simulation_rtw_ConstB = {
     0.0,
     0.125
   }
-  ,                                    /* '<S12>/Selector' */
+  ,                                    /* '<S13>/Selector' */
   0.75
-  ,                                    /* '<S42>/Gain' */
+  ,                                    /* '<S43>/Gain' */
   0.8660254037844386
-  ,                                    /* '<S42>/Sqrt' */
+  ,                                    /* '<S43>/Sqrt' */
   0.25
-  ,                                    /* '<S44>/Gain' */
+  ,                                    /* '<S45>/Gain' */
+  0.75
+  ,                                    /* '<S45>/Gain1' */
+  0.8660254037844386
+  ,                                    /* '<S45>/Sqrt' */
 
   {
     0.0,
@@ -116,7 +120,7 @@ const ConstBlockIO_tricopter_simulati tricopter_simulation_rtw_ConstB = {
     0.0,
     0.0
   }
-  ,                                    /* '<S12>/Selector1' */
+  ,                                    /* '<S13>/Selector1' */
 
   {
     0.0625,
@@ -129,30 +133,30 @@ const ConstBlockIO_tricopter_simulati tricopter_simulation_rtw_ConstB = {
     0.0,
     0.125
   }
-  /* '<S12>/Selector2' */
+  /* '<S13>/Selector2' */
 };
 
 /* Constant parameters (auto storage) */
 const ConstParam_tricopter_simulation tricopter_simulation_rtw_ConstP = {
   /* Expression: [-60 60]*pi/180
-   * Referenced by: '<S45>/1-D Lookup Table'
+   * Referenced by: '<S46>/1-D Lookup Table'
    */
   { -1.0471975511965976, 1.0471975511965976 },
 
   /* Pooled Parameter (Expression: [900 2100])
    * Referenced by:
-   *   '<S36>/1-D Lookup Table'
    *   '<S37>/1-D Lookup Table'
    *   '<S38>/1-D Lookup Table'
-   *   '<S45>/1-D Lookup Table'
+   *   '<S39>/1-D Lookup Table'
+   *   '<S46>/1-D Lookup Table'
    */
   { 900.0, 2100.0 },
 
-  /* Pooled Parameter (Expression: [min_rpm max_rpm]*pi/30)
+  /* Pooled Parameter (Expression: [0 7000]*pi/30)
    * Referenced by:
-   *   '<S36>/1-D Lookup Table'
    *   '<S37>/1-D Lookup Table'
    *   '<S38>/1-D Lookup Table'
+   *   '<S39>/1-D Lookup Table'
    */
   { 0.0, 733.03828583761833 }
 };

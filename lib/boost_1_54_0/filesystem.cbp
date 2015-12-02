@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lib/boost_1_54_0/filesystem" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="release_qnx_qcc_x86">
+				<Option platforms="Windows;" />
+				<Option output="../../tmp/lib/boost_1_54_0/release/qnx/qcc/x86/filesystem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/release/qnx/qcc/x86/" />
+				<Option type="2" />
+				<Option compiler="qcc_compiler" />
+				<Compiler>
+					<Add option="-w" />
+					<Add option="-lang-c++" />
+					<Add option="-malign-double" />
+					<Add option="-Vgcc_ntox86" />
+					<Add option="-fexceptions" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="release_qnx_qcc_arm">
+				<Option platforms="Windows;" />
+				<Option output="../../tmp/lib/boost_1_54_0/release/qnx/qcc/arm/filesystem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/release/qnx/qcc/arm/" />
+				<Option type="2" />
+				<Option compiler="qcc_compiler_arm" />
+				<Compiler>
+					<Add option="-w" />
+					<Add option="-lang-c++" />
+					<Add option="-Vgcc_ntoarmle" />
+					<Add option="-fexceptions" />
+					<Add option="-march=armv7-a -Wa,-march=armv7-a -mfpu=neon -Wa,-mfpu=neon -mtune=cortex-a8 -mfloat-abi=softfp -ftree-vectorize" />
+					<Add option="-D_LITTLE_ENDIAN" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="release_win32_gcc_x86">
+				<Option platforms="Windows;" />
+				<Option output="../../tmp/lib/boost_1_54_0/release/win32/gcc/x86/filesystem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/release/win32/gcc/x86/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-w" />
+					<Add option="-fexceptions" />
+					<Add option="-malign-double" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DWIN32" />
+				</Compiler>
+			</Target>
+			<Target title="release_win32_vc8_x86">
+				<Option platforms="Windows;" />
+				<Option output="../../tmp/lib/boost_1_54_0/release/win32/vc8/x86/filesystem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/release/win32/vc8/x86/" />
+				<Option type="2" />
+				<Option compiler="msvc8" />
+				<Compiler>
+					<Add option="/MD" />
+					<Add option="/GR" />
+					<Add option="/w" />
+					<Add option="/Zp8" />
+					<Add option="/wd4430" />
+					<Add option="/wd4867" />
+					<Add option="/c" />
+					<Add option="/EHsc" />
+					<Add option="/DNDEBUG" />
+					<Add option="/D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="/D_CRT_NONSTDC_NO_DEPRECATE" />
+					<Add option="/D_SCL_SECURE_NO_WARNINGS" />
+					<Add option="/D_USE_32BIT_TIME_T" />
+					<Add option="/DWIN32" />
+				</Compiler>
+			</Target>
+			<Target title="debug_qnx_qcc_x86">
+				<Option platforms="Windows;" />
+				<Option output="../../tmp/lib/boost_1_54_0/debug/qnx/qcc/x86/filesystem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/debug/qnx/qcc/x86/" />
+				<Option type="2" />
+				<Option compiler="qcc_compiler" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-w" />
+					<Add option="-lang-c++" />
+					<Add option="-malign-double" />
+					<Add option="-Vgcc_ntox86" />
+					<Add option="-fexceptions" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="debug_qnx_qcc_arm">
+				<Option platforms="Windows;" />
+				<Option output="../../tmp/lib/boost_1_54_0/debug/qnx/qcc/arm/filesystem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/debug/qnx/qcc/arm/" />
+				<Option type="2" />
+				<Option compiler="qcc_compiler_arm" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-w" />
+					<Add option="-lang-c++" />
+					<Add option="-Vgcc_ntoarmle" />
+					<Add option="-fexceptions" />
+					<Add option="-march=armv7-a -Wa,-march=armv7-a -mfpu=neon -Wa,-mfpu=neon -mtune=cortex-a8 -mfloat-abi=softfp -ftree-vectorize" />
+					<Add option="-D_LITTLE_ENDIAN" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="debug_win32_gcc_x86">
+				<Option platforms="Windows;" />
+				<Option output="../../tmp/lib/boost_1_54_0/debug/win32/gcc/x86/filesystem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/debug/win32/gcc/x86/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-w" />
+					<Add option="-fexceptions" />
+					<Add option="-malign-double" />
+					<Add option="-DDEBUG" />
+					<Add option="-DWIN32" />
+				</Compiler>
+			</Target>
+			<Target title="debug_win32_vc8_x86">
+				<Option platforms="Windows;" />
+				<Option output="../../tmp/lib/boost_1_54_0/debug/win32/vc8/x86/filesystem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/debug/win32/vc8/x86/" />
+				<Option type="2" />
+				<Option compiler="msvc8" />
+				<Compiler>
+					<Add option="/MDd" />
+					<Add option="/RTCu" />
+					<Add option="/RTCs" />
+					<Add option="/RTCc" />
+					<Add option="/GR" />
+					<Add option="/Od" />
+					<Add option="/w" />
+					<Add option="/Zi" />
+					<Add option="/Zp8" />
+					<Add option="/wd4430" />
+					<Add option="/wd4867" />
+					<Add option="/nologo" />
+					<Add option="/c" />
+					<Add option="/EHsc" />
+					<Add option="/DDEBUG" />
+					<Add option="/D_DEBUG" />
+					<Add option="/D_CRT_SECURE_NO_DEPRECATE" />
+					<Add option="/D_CRT_NONSTDC_NO_DEPRECATE" />
+					<Add option="/D_SCL_SECURE_NO_WARNINGS" />
+					<Add option="/D_USE_32BIT_TIME_T" />
+					<Add option="/DWIN32" />
+					<Add option="/D_NO_DEBUG_HEAP=1" />
+				</Compiler>
+			</Target>
+			<Target title="release_linux32_gcc_x86">
+				<Option platforms="Unix;" />
+				<Option output="../../tmp/lib/boost_1_54_0/release/linux32/gcc/x86/libfilesystem.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/release/linux32/gcc/x86/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-w" />
+					<Add option="-O2" />
+					<Add option="-lang-c++" />
+					<Add option="-malign-double" />
+					<Add option="-fexceptions" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="debug_linux32_gcc_x86">
+				<Option platforms="Unix;" />
+				<Option output="../../tmp/lib/boost_1_54_0/debug/linux32/gcc/x86/libfilesystem.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/debug/linux32/gcc/x86/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-w" />
+					<Add option="-O0" />
+					<Add option="-lang-c++" />
+					<Add option="-malign-double" />
+					<Add option="-fexceptions" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="release_linux32_gcc_arm">
+				<Option output="../../tmp/lib/boost_1_54_0/release/linux32/gcc/arm/libboost_filesystem.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="../../tmp/lib/boost_1_54_0/release/linux32/gcc/arm/" />
+				<Option type="2" />
+				<Option compiler="armlinuxgnueabihfgcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-w" />
+					<Add option="-lang-c++" />
+					<Add option="-fexceptions" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="release_win32_vc8_x86;release_qnx_qcc_x86;debug_qnx_qcc_x86;release_qnx_qcc_arm;debug_qnx_qcc_arm;release_win32_gcc_x86;debug_win32_vc8_x86;debug_win32_gcc_x86;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-DBOOST_ALL_NO_LIB" />
+			<Add option="-DLITTLE_ENDIAN" />
+			<Add directory="../boost_1_54_0" />
+		</Compiler>
+		<Unit filename="libs/filesystem/src/codecvt_error_category.cpp" />
+		<Unit filename="libs/filesystem/src/operations.cpp" />
+		<Unit filename="libs/filesystem/src/path.cpp" />
+		<Unit filename="libs/filesystem/src/path_traits.cpp" />
+		<Unit filename="libs/filesystem/src/portability.cpp" />
+		<Unit filename="libs/filesystem/src/unique_path.cpp" />
+		<Unit filename="libs/filesystem/src/utf8_codecvt_facet.cpp" />
+		<Unit filename="libs/filesystem/src/windows_file_codecvt.cpp" />
+		<Unit filename="libs/filesystem/src/windows_file_codecvt.hpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

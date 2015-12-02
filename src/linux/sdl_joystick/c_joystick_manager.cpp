@@ -13,21 +13,18 @@ cJoystickManager::cJoystickManager():
     //ctor
     joy = new cJoystick(0);
 
-    if(NULL == joy)
-        fail = true;
-//    else if(NULL == joy->getName())
-//        fail = true;
-
-    if(fail)
+    if(!joy->isConnected()){
         cout << "cJoystickManager: Could not initialize joystick!" << endl;
-    else
-    {
+        joystick_available = false;
+    }
+    else{
         for(int ii = 0; ii < _eCounter; ii++)
         {
             m_channel.push_back(m_proberties());
             this->setProberty(eChannel(ii),ii, 1, 1, 0, -1, 0);
             cout << "axis: " << (int)ii << endl;
         }
+        joystick_available = true;
     }
 }
 

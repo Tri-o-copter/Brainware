@@ -11,6 +11,8 @@ class cJoystickManager
         /** Default destructor */
         virtual ~cJoystickManager();
 
+        bool isJoystickAvailable(){return joystick_available;};
+
         float getRollValue();
         float getPitchValue();
         float getYawValue();
@@ -57,7 +59,7 @@ class cJoystickManager
     protected:
     private:
         cJoystick* joy;
-
+        bool joystick_available;
         enum eChannel {eRoll=0, ePitch, eYaw, eCol, eMode, eAux, _eCounter};
 
         struct m_proberties

@@ -18,6 +18,8 @@ cJoystick::cJoystick(int selected_joystick)
     int num_buttons = -1;        /* Number of buttons. */
     int num_hats    = -1;        /* Number of hats */
 
+    m_pJoystick = NULL;
+
     /* SDL initialization */
     // without video (or everything), the joystick events wont work *grrr*
     // without eventthread, no events on my mac deteced *grrr*

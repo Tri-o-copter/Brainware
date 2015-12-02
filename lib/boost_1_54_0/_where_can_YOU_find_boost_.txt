@@ -1,0 +1,5 @@
+download http://sourceforge.net/projects/boost/files/boost/1.54.0/
+
+... and extract here!
+
+(results e.g. in *\lib\boost_1_54_0\boost\accumulators\*)

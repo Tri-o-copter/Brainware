@@ -9,7 +9,12 @@
 		<Project filename="app/IMU_logger/imu_logger.cbp" />
 		<Project filename="app/joystick_tester/joystick.cbp" />
 		<Project filename="app/OBS_logger/obs_logger.cbp" />
-		<Project filename="app/tri-o-sim/tri-o-sim.cbp" />
+		<Project filename="app/tri-o-sim/tri-o-sim.cbp">
+			<Depends filename="lib/boost_1_54_0/timer.cbp" />
+			<Depends filename="lib/boost_1_54_0/thread.cbp" />
+			<Depends filename="lib/boost_1_54_0/chrono.cbp" />
+			<Depends filename="lib/boost_1_54_0/system.cbp" />
+		</Project>
 		<Project filename="app/UART_sender/uart_sender.cbp" />
 		<Project filename="app/wheatstone_benchmark/wheatstone_benchmark.cbp" />
 		<Project filename="src/cECF/boost_test/boost_test.cbp" />
@@ -17,10 +22,29 @@
 		<Project filename="test/wireless/boost_test/boost_test.cbp" />
 		<Project filename="test/MAVlink/boost_test/boost_test.cbp" />
 		<Project filename="test/event_timer/boost_test/boost_test.cbp" />
-		<Project filename="test/logging/boost_test/boost_test.cbp" />
+		<Project filename="test/logging/boost_test/boost_test.cbp">
+			<Depends filename="lib/boost_1_54_0/timer.cbp" />
+			<Depends filename="lib/boost_1_54_0/thread.cbp" />
+			<Depends filename="lib/boost_1_54_0/chrono.cbp" />
+			<Depends filename="lib/boost_1_54_0/system.cbp" />
+			<Depends filename="lib/boost_1_54_0/iostreams.cbp" />
+			<Depends filename="lib/boost_1_54_0/test.cbp" />
+			<Depends filename="lib/boost_1_54_0/filesystem.cbp" />
+		</Project>
 		<Project filename="src/flightgearUDP/asio_flightgear_sender.cbp" />
 		<Project filename="test/servochannels/boost_test.cbp" />
 		<Project filename="test/controlsystem/boost_test.cbp" />
 		<Project filename="app/uart_receiver/uart_receiver.cbp" />
+		<Project filename="lib/boost_1_54_0/timer.cbp" />
+		<Project filename="lib/boost_1_54_0/thread.cbp" />
+		<Project filename="lib/boost_1_54_0/chrono.cbp" />
+		<Project filename="lib/boost_1_54_0/system.cbp" />
+		<Project filename="lib/boost_1_54_0/iostreams.cbp" />
+		<Project filename="lib/boost_1_54_0/test.cbp" />
+		<Project filename="lib/boost_1_54_0/filesystem.cbp" />
+		<Project filename="lib/boost_1_54_0/date_time.cbp" />
+		<Project filename="lib/boost_1_54_0/program_options.cbp" />
+		<Project filename="lib/boost_1_54_0/serialization.cbp" />
+		<Project filename="lib/boost_1_54_0/signals.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="boost 1.54.0">
+		<Project filename="date_time.cbp" />
+		<Project filename="filesystem.cbp" />
+		<Project filename="iostreams.cbp" />
+		<Project filename="program_options.cbp" />
+		<Project filename="serialization.cbp" />
+		<Project filename="signals.cbp" />
+		<Project filename="system.cbp" />
+		<Project filename="test.cbp" />
+		<Project filename="thread.cbp" />
+		<Project filename="timer.cbp" />
+		<Project filename="chrono.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

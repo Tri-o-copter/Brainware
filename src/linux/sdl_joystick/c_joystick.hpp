@@ -18,7 +18,7 @@ public:
     const cJoystick* getJoystick();
     float getAxis(uint8_t axis);
     int getButton(uint8_t button);
-
+    bool isConnected() {return(NULL != m_pJoystick);};
 
     boost::signals2::signal<void (const cJoystick*, int axis  )>  signal_axis;
     boost::signals2::signal<void (const cJoystick*, int button)>  signal_button;

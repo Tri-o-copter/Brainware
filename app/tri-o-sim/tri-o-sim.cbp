@@ -6,11 +6,11 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="debug_linux32_x86_gcc">
+			<Target title="debug_linux32_gcc_x86">
 				<Option platforms="Unix;" />
-				<Option output="../../bin/tri-o-sim_linux32_x86_debug" prefix_auto="1" extension_auto="1" />
+				<Option output="../../bin/tri-o-sim_linux32_gcc_x86_debug" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../bin" />
-				<Option object_output="../../tmp/bin/tri-o-sim/debug/linux32/x86/" />
+				<Option object_output="../../tmp/bin/tri-o-sim/debug/linux32/gcc/x86/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -18,6 +18,7 @@
 					<Add option="-DDEBUG" />
 					<Add option="-DGPS_DEBUGGING" />
 					<Add option="-DWITH_STDIO" />
+					<Add directory="../../src/linux/SDL2-2.0.1/include" />
 				</Compiler>
 				<Linker>
 					<Add library="boost_system" />
@@ -34,15 +35,16 @@
 					<Add directory="../../src/linux/SDL2-2.0.1/build/linux32" />
 				</Linker>
 			</Target>
-			<Target title="release_linux32_x86_gcc">
+			<Target title="release_linux32_gcc_x86">
 				<Option platforms="Unix;" />
-				<Option output="../../bin/tri-o-sim_linux32_x86_release" prefix_auto="1" extension_auto="1" />
+				<Option output="../../bin/tri-o-sim_linux32_gcc_x86_release" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../bin" />
-				<Option object_output="../../tmp/bin/tri-o-sim/release/linux32/x86/" />
+				<Option object_output="../../tmp/bin/tri-o-sim/release/linux32/gcc/x86/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="../../src/linux/SDL2-2.0.1/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -60,11 +62,11 @@
 					<Add directory="../../src/linux/SDL2-2.0.1/build/linux32" />
 				</Linker>
 			</Target>
-			<Target title="release_mac64_x86_gcc">
+			<Target title="release_mac64_gcc_x86">
 				<Option platforms="Mac;" />
-				<Option output="../../bin/tri-o-sim_mac64_x86_release" prefix_auto="1" extension_auto="1" />
+				<Option output="../../bin/tri-o-sim_mac64_gcc_x86_release" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../bin" />
-				<Option object_output="../../tmp/bin/tri-o-sim/release/mac64/x86/" />
+				<Option object_output="../../tmp/bin/tri-o-sim/release/mac64/gcc/x86/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -89,11 +91,11 @@
 					<Add directory="/opt/local/lib" />
 				</Linker>
 			</Target>
-			<Target title="release_win32_x86_gcc">
+			<Target title="release_win32_gcc_x86">
 				<Option platforms="Windows;" />
-				<Option output="../../bin/tri-o-sim_linux32_x86_release" prefix_auto="1" extension_auto="1" />
+				<Option output="../../bin/tri-o-sim_win32_gcc_x86_release" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../bin" />
-				<Option object_output="../../tmp/bin/tri-o-sim/release/linux32/x86/" />
+				<Option object_output="../../tmp/bin/tri-o-sim/release/win32/gcc/x86/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -102,18 +104,27 @@
 					<Add option="-DWIN32" />
 					<Add option="-D_WIN32" />
 					<Add option="-DNDEBUG" />
+					<Add option="-D_WIN32_WINNT=0x0501" />
+					<Add option="-DWINVER=0x0501" />
 					<Add directory="../../src/windows/SDL2-2.0.1/include" />
-					<Add directory="../../src/windows/boost_1_49_0" />
+					<Add directory="../../lib/boost_1_54_0" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="ws2_32" />
+					<Add library="mingw32" />
 					<Add library="SDL2" />
+					<Add library="timer" />
+					<Add library="chrono" />
+					<Add library="thread" />
+					<Add library="system" />
 					<Add directory="../../src/windows/SDL2-2.0.1/lib/x86" />
+					<Add directory="../../tmp/lib/boost_1_54_0/release/win32/gcc/x86" />
 				</Linker>
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="all" targets="debug_linux32_x86_gcc;release_linux32_x86_gcc;release_mac64_x86_gcc;release_win32_x86_gcc;" />
+			<Add alias="all" targets="debug_linux32_gcc_x86;release_linux32_gcc_x86;release_mac64_gcc_x86;release_win32_gcc_x86;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
@@ -131,7 +142,6 @@
 			<Add option="-DMT=0" />
 			<Add option="-DTID01EQ=0" />
 			<Add directory="../../src/cECF" />
-			<Add directory="../../src/linux/SDL2-2.0.1/include" />
 			<Add directory="../../src/matlab_r2011b" />
 			<Add directory="../../src/matlab_r2011b/rtw/c/src" />
 			<Add directory="../../src/matlab_r2011b/extern/include" />
@@ -142,13 +152,6 @@
 			<Add directory="../../src/linux/sdl_joystick" />
 			<Add directory="../../src/simulation" />
 		</Compiler>
-		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rtGetInf.cpp" />
-		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rtGetInf.h" />
-		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rtGetNaN.cpp" />
-		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rtGetNaN.h" />
-		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rt_defines.h" />
-		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rt_nonfinite.cpp" />
-		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rt_nonfinite.h" />
 		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rtwtypes.h" />
 		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/tricopter_simulation_rtw.cpp" />
 		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/tricopter_simulation_rtw.h" />
@@ -172,6 +175,198 @@
 		<Unit filename="../../src/linux/sdl_joystick/c_joystick_manager.hpp" />
 		<Unit filename="../../src/simulation/c_simulation.cpp" />
 		<Unit filename="../../src/simulation/c_simulation.h" />
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_assert.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_atomic.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_audio.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_bits.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_blendmode.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_clipboard.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_config.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_cpuinfo.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_endian.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_error.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_events.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_filesystem.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_gamecontroller.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_gesture.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_haptic.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_hints.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_joystick.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_keyboard.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_keycode.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_loadso.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_log.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_main.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_messagebox.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_mouse.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_mutex.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_name.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_opengl.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_opengles.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_opengles2.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_pixels.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_platform.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_power.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_quit.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_rect.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_render.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_revision.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_rwops.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_scancode.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_shape.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_stdinc.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_surface.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_system.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_syswm.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_assert.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_common.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_compare.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_crc32.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_font.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_fuzzer.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_harness.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_images.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_log.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_md5.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_test_random.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_thread.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_timer.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_touch.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_types.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_version.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/SDL_video.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/begin_code.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
+		<Unit filename="../../src/windows/SDL2-2.0.1/include/close_code.h">
+			<Option target="release_win32_gcc_x86" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
