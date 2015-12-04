@@ -170,7 +170,7 @@ BOOST_AUTO_TEST_CASE( Euler_with_GPS )
 
     ECF.set_GyroVector_rads(0., 0., 0.);
     ECF.set_AccelVector_mss(0.0, 0.0, -9.81);
-    ECF.set_speed_msdeg(10.0, 0.0, 10.0); // horz_speed, course_deg, abs_speed
+    ECF.set_speed_ms(10.0, 0.0, 10.0); // float vel_north, float vel_east, float vel_down
 
     outfile.open("history_roll.txt", ios_base::trunc);
     outfile<<"# Time\t"<<"pitch\t"<<"roll\t"<<"yaw"<<endl;

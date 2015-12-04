@@ -5,7 +5,7 @@
 
 #include "boost/date_time/posix_time/posix_time.hpp"
 #include "millis.h"
-#include "Logging.h"
+#include "Logging/Logging.h"
 
 int loopcount = 0;
 Logging timelog;

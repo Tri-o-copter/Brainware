@@ -97,6 +97,7 @@ void datalink_module::send_messages(void)
     // GPS Message
     if(NULL != m_gps)
     {
+// TODO (default#1#): iGPS has no member named fix...
 //        cDataLink::SendGpsMsg( m_gps->fix, m_gps->latitude, m_gps->longitude, m_gps->altitude,
 //                               m_gps->hdop, 65535,
 //                               m_gps->ground_speed , m_gps->ground_course,
@@ -125,22 +126,24 @@ void datalink_module::send_messages(void)
     }
 #endif
 
-    //if(NULL != m_fcci)
+// TODO (default#1#): m_fcci is no longer a pointer, therefore null-pointer check commented
+
+//    if(NULL != m_fcci)
     {
         // Serco Output Message
         uint16_t ped_us,  col_us,  lon_us,  lat_us, aux_us, mode_us;
 
-//        m_fcci.getChannels(&ped_us,  &col_us,  &lon_us,  &lat_us, &aux_us, &mode_us);
-//        cDataLink::SendRcChannelsRaw(ped_us,col_us,lon_us,lat_us, aux_us, mode_us);
-//
-//        m_ctrl.getControl( &ped_us,  &col_us,  &lon_us,  &lat_us);
-//        cDataLink::SendServoOutputRaw(ped_us,col_us,lon_us,lat_us, aux_us, mode_us); // mode from fcci!
+        m_fcci.getChannels(&ped_us,  &col_us,  &lon_us,  &lat_us, &aux_us, &mode_us);
+        cDataLink::SendRcChannelsRaw(ped_us,col_us,lon_us,lat_us, aux_us, mode_us);
+
+        m_ctrl.getControl( &ped_us,  &col_us,  &lon_us,  &lat_us);
+        cDataLink::SendServoOutputRaw(ped_us,col_us,lon_us,lat_us, aux_us, mode_us); // mode from fcci!
     }
 #if defined(DEBUG)
-    else
-    {
-        std::cout << "Null pointer in datalink_module::send_messages (m_fcci).\n";
-    }
+//    else
+//    {
+//        std::cout << "Null pointer in datalink_module::send_messages (m_fcci).\n";
+//    }
 #endif
 }
 

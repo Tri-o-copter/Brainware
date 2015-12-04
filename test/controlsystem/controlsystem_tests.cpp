@@ -14,6 +14,15 @@ using namespace std;
 #include "../app/brainware/ecf_module.h"
 #include "../app/brainware/ctrl_module.h"
 
+#include "../app/brainware/fcci_module.h"
+
+fcci_module m_fcci;
+
+SensorFusion* m_sf = NULL;
+
+ctrl_module m_ctrl;
+
+
 void test_controlsystem(void)
 {
     {   // default initialization

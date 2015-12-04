@@ -244,23 +244,23 @@ uint64_t microsSinceEpoch()
 
 #include "cParameter/cParameter.h"
 
-BOOST_AUTO_TEST_CASE( cDataLink_test )
+void cDataLink_test ()
 {
 
-    cParameter::create_instance(1, 42.2, "Hurz1");
-    {
-        cParameter::create_instance(42, 42.2, "Hurz42");
-    }
-    cParameter::create_instance(2, 42.1, "Hurz2");
-    //cParameter::get_instances()->insert()
+//    cParameter::create_instance(1, 42.2, "Hurz1");
+//    {
+//        cParameter::create_instance(42, 42.2, "Hurz42");
+//    }
+//    cParameter::create_instance(2, 42.1, "Hurz2");
+//    //cParameter::get_instances()->insert()
 
 
-    for(std::set<cParameter*>::iterator it=cParameter::get_instances()->begin(); it!=cParameter::get_instances()->end(); ++it)
-    {
-        printf("ID: %d\t", (*it)->get_id());
-        printf(" : %s\t", (*it)->get_name().c_str());
-        printf(" : %f\n", (*it)->get_value());
-    }
+//    for(std::set<cParameter*>::iterator it=cParameter::get_instances()->begin(); it!=cParameter::get_instances()->end(); ++it)
+//    {
+//        printf("ID: %d\t", (*it)->get_id());
+//        printf(" : %s\t", (*it)->get_name().c_str());
+//        printf(" : %f\n", (*it)->get_value());
+//    }
     //cDataLink GCSlink("192.168.0.190");
     cDataLink GCSlink("129.247.48.80");
     for(int ii=0; ii < 3*60; ii++) // N*60 seconds

@@ -6,7 +6,7 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="debug_linux32_x86_gcc">
+			<Target title="debug_linux32_gcc_x86">
 				<Option output="../../../bin/test_mavlink_linux32_x86_debug" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../tmp/bin/test/mavlink/debug/linux32/x86/" />
 				<Option type="1" />
@@ -16,7 +16,7 @@
 					<Add option="-DDEBUG" />
 				</Compiler>
 			</Target>
-			<Target title="release_linux32_x86_gcc">
+			<Target title="release_linux32_gcc_x86">
 				<Option output="../../../bin/test_mavlink_linux32_x86_release" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../tmp/bin/test/mavlink/release/linux32/x86/" />
 				<Option type="1" />
@@ -28,7 +28,7 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="release_linux32_arm_gcc">
+			<Target title="release_linux32_gcc_arm">
 				<Option output="../../../bin/test_mavlink_linux32_arm_release" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../tmp/bin/test/mavlink/debug/linux32/arm/" />
 				<Option type="1" />
@@ -41,26 +41,29 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add directory="../../../tmp/lib/boost_1_54_0/release/linux32/gcc/arm" />
 				</Linker>
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="all" targets="debug_linux32_x86_gcc;release_linux32_x86_gcc;release_linux32_arm_gcc;" />
+			<Add alias="all" targets="debug_linux32_gcc_x86;release_linux32_gcc_x86;release_linux32_gcc_arm;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add option="-DBOOST_TEST_DYN_LINK" />
 			<Add directory="../../../src" />
 			<Add directory="../../../src/linux" />
 			<Add directory=".." />
 			<Add directory="." />
+			<Add directory="../../../lib/boost_1_54_0" />
 		</Compiler>
 		<Linker>
 			<Add library="boost_unit_test_framework" />
 			<Add library="boost_thread" />
 			<Add library="boost_signals" />
 			<Add library="boost_system" />
+			<Add library="pthread" />
+			<Add library="rt" />
 		</Linker>
 		<Unit filename="../../../src/cParameter/cParameter.cpp" />
 		<Unit filename="../../../src/cParameter/cParameter.h" />

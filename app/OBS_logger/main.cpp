@@ -390,7 +390,9 @@ int main(int argc, char **argv )
     }
     setup();
 
-    boost::timer::auto_cpu_timer t(1,"Program has within the %w s run time the CPU used for %t s (%p \%).\n\n");
+    #if !defined(__arm__)
+        boost::timer::auto_cpu_timer t(1,"Program has within the %w s run time the CPU used for %t s (%p \%).\n\n");
+    #endif
 
     // register Ctrl-C signal
     signal(SIGINT, &trap);

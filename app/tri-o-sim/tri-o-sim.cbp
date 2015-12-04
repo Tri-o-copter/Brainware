@@ -98,29 +98,38 @@
 				<Option object_output="../../tmp/bin/tri-o-sim/release/win32/gcc/x86/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="0" />
+				<Option projectLinkerOptionsRelation="0" />
+				<Option projectIncludeDirsRelation="0" />
+				<Option projectResourceIncludeDirsRelation="0" />
+				<Option projectLibDirsRelation="0" />
 				<Compiler>
-					<Add option="-O2" />
 					<Add option="-Wall" />
-					<Add option="-DWIN32" />
-					<Add option="-D_WIN32" />
-					<Add option="-DNDEBUG" />
-					<Add option="-D_WIN32_WINNT=0x0501" />
-					<Add option="-DWINVER=0x0501" />
-					<Add directory="../../src/windows/SDL2-2.0.1/include" />
+					<Add option="-fexceptions" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-DMODEL=tricopter_simulation_rtw" />
+					<Add option="-DNUMST=1" />
+					<Add option="-DNCSTATES=0" />
+					<Add option="-DHAVESTDIO" />
+					<Add option="-DONESTEPFCN=1" />
+					<Add option="-DTERMFCN=1" />
+					<Add option="-DMAT_FILE=0" />
+					<Add option="-DMULTI_INSTANCE_CODE=1" />
+					<Add option="-DINTEGER_CODE=0" />
+					<Add option="-DMT=0" />
+					<Add option="-DTID01EQ=0" />
+					<Add directory="../../src/cECF" />
+					<Add directory="../../src/matlab_r2011b" />
+					<Add directory="../../src/matlab_r2011b/rtw/c/src" />
+					<Add directory="../../src/matlab_r2011b/extern/include" />
+					<Add directory="../../src/matlab_r2011b/simulink/include" />
+					<Add directory="../../simulation/tricopter_simulation_rtw_ert_rtw" />
+					<Add directory="../../src/flightgearUDP" />
+					<Add directory="../../simulation" />
+					<Add directory="../../src/linux/sdl_joystick" />
+					<Add directory="../../src/simulation" />
 					<Add directory="../../lib/boost_1_54_0" />
 				</Compiler>
-				<Linker>
-					<Add option="-s" />
-					<Add library="ws2_32" />
-					<Add library="mingw32" />
-					<Add library="SDL2" />
-					<Add library="timer" />
-					<Add library="chrono" />
-					<Add library="thread" />
-					<Add library="system" />
-					<Add directory="../../src/windows/SDL2-2.0.1/lib/x86" />
-					<Add directory="../../tmp/lib/boost_1_54_0/release/win32/gcc/x86" />
-				</Linker>
 			</Target>
 		</Build>
 		<VirtualTargets>
@@ -151,6 +160,7 @@
 			<Add directory="../../simulation" />
 			<Add directory="../../src/linux/sdl_joystick" />
 			<Add directory="../../src/simulation" />
+			<Add directory="../../lib/boost_1_54_0" />
 		</Compiler>
 		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/rtwtypes.h" />
 		<Unit filename="../../simulation/tricopter_simulation_rtw_ert_rtw/tricopter_simulation_rtw.cpp" />
