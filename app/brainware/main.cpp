@@ -45,7 +45,8 @@ ctrl_module m_ctrl;
 
 fcci_module m_fcci;
 
-datalink_module m_datalink;
+datalink_module m_datalink(m_imu.get_imu_ptr(), m_imu.get_mag_ptr(), NULL, m_gps.get_gps_ptr(), m_ecf.get_sf_ptr());
+
 
 
 bool execute = true;
@@ -127,7 +128,7 @@ int main(int argc, char **argv )
     if(!options.gcs_udp_addr.empty())
     {
         cout << "Trying to send to: "<< options.gcs_udp_addr << endl;
-      //  m_datalink.connect(options.gcs_udp_addr);
+        m_datalink.connect(options.gcs_udp_addr);
     }
     if(0 < options.logging_rate)
     {
@@ -138,7 +139,9 @@ int main(int argc, char **argv )
         cout << "Logging disabled! "<< endl;
     }
 
+#if !defined(__arm__) //on arm target, the following call results in this linker error: "undefined reference to `boost::chrono::steady_clock::now()"
     boost::timer::auto_cpu_timer t(1,"Program has within the %w s run time the CPU used for %t s (%p \%).\n\n");
+#endif // defined
 
 //    // set properties of main thread
 //    struct sched_param thread_param;

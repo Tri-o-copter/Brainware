@@ -38,6 +38,9 @@
 		<VirtualTargets>
 			<Add alias="All" targets="release_win32_gcc_x86;" />
 		</VirtualTargets>
+		<Compiler>
+			<Add directory="../../lib/boost_1_54_0" />
+		</Compiler>
 		<Unit filename="c_flightgear_base.cpp" />
 		<Unit filename="c_flightgear_base.hpp" />
 		<Unit filename="c_flightgear_sender_asio.cpp" />

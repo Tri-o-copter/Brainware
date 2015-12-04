@@ -2,8 +2,14 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="Workspace">
 		<Project filename="src/i2cdevlib/i2cdevlib.cbp" />
-		<Project filename="src/matlab_r2011b/LIB_MATLAB.cbp" />
-		<Project filename="app/brainware/brainware.cbp" />
+		<Project filename="app/brainware/brainware.cbp">
+			<Depends filename="lib/boost_1_54_0/timer.cbp" />
+			<Depends filename="lib/boost_1_54_0/thread.cbp" />
+			<Depends filename="lib/boost_1_54_0/chrono.cbp" />
+			<Depends filename="lib/boost_1_54_0/system.cbp" />
+			<Depends filename="lib/boost_1_54_0/filesystem.cbp" />
+			<Depends filename="lib/boost_1_54_0/program_options.cbp" />
+		</Project>
 		<Project filename="app/control_tester/control_tester.cbp" />
 		<Project filename="app/GPS_logger/gps_logger.cbp" />
 		<Project filename="app/IMU_logger/imu_logger.cbp" />
@@ -16,9 +22,12 @@
 			<Depends filename="lib/boost_1_54_0/system.cbp" />
 		</Project>
 		<Project filename="app/UART_sender/uart_sender.cbp" />
+		<Project filename="app/uart_receiver/uart_receiver.cbp" />
 		<Project filename="app/wheatstone_benchmark/wheatstone_benchmark.cbp" />
 		<Project filename="src/cECF/boost_test/boost_test.cbp" />
-		<Project filename="src/linux/Drotek10dof/boost_test/boost_test.cbp" />
+		<Project filename="src/linux/Drotek10dof/boost_test/boost_test.cbp">
+			<Depends filename="lib/boost_1_54_0/test.cbp" />
+		</Project>
 		<Project filename="test/wireless/boost_test/boost_test.cbp" />
 		<Project filename="test/MAVlink/boost_test/boost_test.cbp" />
 		<Project filename="test/event_timer/boost_test/boost_test.cbp" />
@@ -34,7 +43,7 @@
 		<Project filename="src/flightgearUDP/asio_flightgear_sender.cbp" />
 		<Project filename="test/servochannels/boost_test.cbp" />
 		<Project filename="test/controlsystem/boost_test.cbp" />
-		<Project filename="app/uart_receiver/uart_receiver.cbp" />
+		<Project filename="src/matlab_r2011b/LIB_MATLAB.cbp" />
 		<Project filename="lib/boost_1_54_0/timer.cbp" />
 		<Project filename="lib/boost_1_54_0/thread.cbp" />
 		<Project filename="lib/boost_1_54_0/chrono.cbp" />

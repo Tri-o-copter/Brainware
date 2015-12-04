@@ -6,7 +6,7 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="debug_linux32_x86_gcc">
+			<Target title="debug_linux32_gcc_x86">
 				<Option output="../../bin/test_controlsystem_linux32_x86_debug" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../bin" />
 				<Option object_output="../../tmp/bin/test/controlsystem/debug/linux32/x86/" />
@@ -17,7 +17,7 @@
 					<Add option="-DDEBUG" />
 				</Compiler>
 			</Target>
-			<Target title="release_linux32_x86_gcc">
+			<Target title="release_linux32_gcc_x86">
 				<Option output="../../bin/test_controlsystem_linux32_x86_release" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../bin" />
 				<Option object_output="../../tmp/bin/test/controlsystem/release/linux32/x86/" />
@@ -31,7 +31,7 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="release_linux32_arm_gcc">
+			<Target title="release_linux32_gcc_arm">
 				<Option output="../../bin/test_controlsystem_linux32_arm_release" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../bin" />
 				<Option object_output="../../tmp/bin/test/controlsystem/debug/linux32/arm/" />
@@ -45,11 +45,12 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add directory="../../tmp/lib/boost_1_54_0/release/linux32/gcc/arm" />
 				</Linker>
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="all" targets="debug_linux32_x86_gcc;release_linux32_x86_gcc;release_linux32_arm_gcc;" />
+			<Add alias="all" targets="debug_linux32_gcc_x86;release_linux32_gcc_x86;release_linux32_gcc_arm;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
@@ -60,6 +61,7 @@
 			<Add directory="../../src/linux" />
 			<Add directory="../../../src/linux/Millis" />
 			<Add directory="../../../src/linux/Logging" />
+			<Add directory="../../lib/boost_1_54_0" />
 		</Compiler>
 		<Linker>
 			<Add library="boost_unit_test_framework" />
@@ -74,6 +76,15 @@
 		<Unit filename="../../app/brainware/ctrl_module.h" />
 		<Unit filename="../../app/brainware/ecf_module.cpp" />
 		<Unit filename="../../app/brainware/ecf_module.h" />
+		<Unit filename="../../app/brainware/fcci_module.cpp" />
+		<Unit filename="../../app/brainware/fcci_module.h" />
+		<Unit filename="../../src/ARDUINO/Print.cpp" />
+		<Unit filename="../../src/ARDUINO/Print.h" />
+		<Unit filename="../../src/ARDUINO/Printable.h" />
+		<Unit filename="../../src/ARDUINO/Stream.cpp" />
+		<Unit filename="../../src/ARDUINO/Stream.h" />
+		<Unit filename="../../src/ARDUINO/WString.cpp" />
+		<Unit filename="../../src/ARDUINO/WString.h" />
 		<Unit filename="../../src/cECF/ECF.cpp" />
 		<Unit filename="../../src/cECF/ECF.h" />
 		<Unit filename="../../src/cECF/MatrixMath.cpp" />
@@ -81,6 +92,10 @@
 		<Unit filename="../../src/cECF/VectorMath.cpp" />
 		<Unit filename="../../src/cECF/VectorMath.h" />
 		<Unit filename="../../src/cECF/st_Euler.h" />
+		<Unit filename="../../src/cParameter/cParameter.cpp" />
+		<Unit filename="../../src/cParameter/cParameter.h" />
+		<Unit filename="../../src/crc16/crc16.cpp" />
+		<Unit filename="../../src/crc16/crc16.h" />
 		<Unit filename="../../src/linux/BackgroundAction/BackgroundAction.cpp" />
 		<Unit filename="../../src/linux/BackgroundAction/BackgroundAction.h" />
 		<Unit filename="../../src/linux/ControlSystem/ControlSystem.cpp" />
@@ -88,10 +103,21 @@
 		<Unit filename="../../src/linux/ControlSystem/i_CTRL.h" />
 		<Unit filename="../../src/linux/Delay.cpp" />
 		<Unit filename="../../src/linux/Delay.h" />
+		<Unit filename="../../src/linux/HardwareSerial/HardwareSerial.cpp" />
+		<Unit filename="../../src/linux/HardwareSerial/HardwareSerial.h" />
 		<Unit filename="../../src/linux/Logging/Logging.cpp" />
 		<Unit filename="../../src/linux/Logging/Logging.h" />
 		<Unit filename="../../src/linux/SensorFusion/SensorFusion.cpp" />
 		<Unit filename="../../src/linux/SensorFusion/SensorFusion.h" />
+		<Unit filename="../../src/linux/ServoInterface/ServoInterface.cpp" />
+		<Unit filename="../../src/linux/ServoInterface/ServoInterface.h" />
+		<Unit filename="../../src/linux/cServochannels/c_parser.cpp" />
+		<Unit filename="../../src/linux/cServochannels/c_parser.h" />
+		<Unit filename="../../src/linux/cServochannels/c_servochannels.cpp" />
+		<Unit filename="../../src/linux/cServochannels/c_servochannels.h" />
+		<Unit filename="../../src/linux/millis.cpp" />
+		<Unit filename="../../src/linux/millis.h" />
+		<Unit filename="../../src/linux/wiring.h" />
 		<Unit filename="boost_test_main.cpp" />
 		<Unit filename="controlsystem_tests.cpp" />
 		<Extensions>
