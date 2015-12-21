@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Comment=DataExplorer - explore your measurement data
+Comment[en_US]=DataExplorer - explore your measurement data
+Comment[de_DE]=DataExplorer - erforsche deine Messdaten
+Encoding=UTF-8
+Exec=/usr/local/DataExplorer/DataExplorer %f
+GenericName=DataExplorer
+Icon=/usr/local/DataExplorer/DataExplorer.xpm
+MimeType=application/x-DataExplorer
+Name=DataExplorer
+Path=/usr/local/DataExplorer/
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GTK;Utility;Application;

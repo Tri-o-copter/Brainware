@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Comment=DataExplorer - explore your measurement data
+Comment[en_US]=DevicePropertiesEditor - edit your DataExplorer device properties
+Comment[de_DE]=DevicePropertiesEditor - bearbeite die DataExplorer Geräteeigenschaften
+Encoding=UTF-8
+Exec=java -Dfile.encoding=UTF-8 -Xms32m -Xmx256m -classpath /usr/local/DataExplorer/DataExplorer.jar gde.ui.dialog.edit.DevicePropertiesEditor
+GenericName=DevicePropertiesEditor
+Icon=/usr/local/DataExplorer/DevicePropertiesEditor.xpm
+Name=DevicePropertiesEditor
+Path=/usr/local/DataExplorer/
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GTK;Utility;Application;
